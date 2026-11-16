@@ -1,0 +1,53 @@
+{
+  "run": "13220013",
+  "epoch": 18,
+  "architecture": "whole_ct_native_prompt_anatomy_shape_fasterrisk_v7",
+  "checkpoint_sha256": "63b9693aea3cf79b44becc4f7757d6a7ccf874da4f35daae207331c1051d5f5a",
+  "initialization": "V5 hard networks plus supervised anatomy warmup; fresh direct risk bank",
+  "loss_weights": {
+    "object": 1.0,
+    "box_l1": 5.0,
+    "box_giou": 2.0,
+    "coarse_dice": 1.0,
+    "coarse_focal": 1.0,
+    "fine_dice": 2.0,
+    "fine_focal_positive": 1.0,
+    "fine_focal_negative": 0.25,
+    "missing_nodule": 4.0,
+    "semantic": 1.0,
+    "semantic_anchor": 0.5,
+    "nodule": 0.5,
+    "risk": 0.5,
+    "anatomy": 0.1,
+    "vista_nodule": 1.0
+  },
+  "feature_names": [
+    "volume_mm3",
+    "log1p_volume_mm3",
+    "soft_surface_mm2",
+    "equivalent_diameter_mm",
+    "radius_gyration_mm",
+    "sd_x_mm",
+    "sd_y_mm",
+    "sd_z_mm",
+    "lobulation",
+    "margin",
+    "sphericity",
+    "spiculation",
+    "subtlety",
+    "texture"
+  ],
+  "effective_ct_batch_size": 8,
+  "training_policy": {
+    "name": "exclude_physical_nodule_reader_mean_malignancy_equal_3",
+    "exclude_indeterminate": true,
+    "input_cases": 702,
+    "eligible_cases_before_limit": 638,
+    "retained_cases": 638,
+    "dropped_cases_without_targets": 64,
+    "truncated_cases_for_smoke_test": 0,
+    "physical_nodules": 2125,
+    "retained_physical_nodules": 1599,
+    "excluded_indeterminate_nodules": 526
+  }
+}

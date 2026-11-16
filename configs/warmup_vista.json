@@ -1,0 +1,12 @@
+{
+  "manifest": "data/fold_0.json",
+  "anatomy_root": "data/anatomy",
+  "public_vista_checkpoint": "checkpoints/vista_public.pt",
+  "output_dir": "outputs/vista_warmup",
+  "public_only": true,
+  "lr_vista": 1e-05,
+  "lr_head": 1e-05,
+  "anatomy_weight": 0.1,
+  "epochs": 30,
+  "wandb_mode": "disabled"
+}

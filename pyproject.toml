@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "v7-lung-nodule"
+version = "0.1.0"
+description = "Whole-CT nodule detection, segmentation, semantic features and malignancy prediction"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.6,<2.9", "monai==1.3.2", "numpy>=1.24,<2",
+  "scipy>=1.11,<1.14", "nibabel>=5.2,<6", "scikit-learn>=1.2,<1.5",
+  "pandas>=1.5,<3", "matplotlib>=3.7,<4", "fasterrisk==0.1.10",
+  "einops>=0.6", "PyYAML>=6", "wandb>=0.19"
+]
+
+[project.optional-dependencies]
+visualization = ["numpy>=1.26,<2", "scikit-image>=0.22,<0.26", "ipyniivue==2.4.4", "ipywidgets>=8,<9", "pooch>=1.8"]
+
+[project.urls]
+Repository = "https://github.com/YiJin0716/V7"
+
+[tool.setuptools]
+license-files = ["LICENSES/*.txt", "THIRD_PARTY.md"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"v7._core.common" = ["*.json"]
+"v7.visualization" = ["pipeline_report_assets/*"]

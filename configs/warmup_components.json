@@ -1,0 +1,49 @@
+{
+  "window_size": [
+    128,
+    128,
+    128
+  ],
+  "overlap": 0.25,
+  "screen_shape": [
+    64,
+    64,
+    64
+  ],
+  "roi_shape": [
+    128,
+    128,
+    128
+  ],
+  "num_queries": 24,
+  "detr_hidden_dim": 128,
+  "detr_coarse_shape": [
+    12,
+    12,
+    12
+  ],
+  "detr_nheads": 4,
+  "detr_encoder_layers": 2,
+  "detr_decoder_layers": 2,
+  "context_channels": 8,
+  "refiner_base": 8,
+  "hard_negatives": 2,
+  "teacher_full_epochs": 1,
+  "teacher_zero_epoch": 11,
+  "teacher_jitter": 8,
+  "minimum_roi_coverage": 0.8,
+  "semantic_roi_size": 64,
+  "semantic_width": 16,
+  "semantic_min_dice": 0.3,
+  "inference_object_threshold": 0.5,
+  "detector_kind": "native_seeded",
+  "detector_nms_iou": 0.5,
+  "native_proposal_threshold": 0.1,
+  "native_confidence_residual_bound": 2.0,
+  "manifest": "data/fold_0.json",
+  "vista_checkpoint": "checkpoints/vista_nodule.pt",
+  "output_dir": "outputs/component_warmup",
+  "lr_main": 0.0001,
+  "lr_semantic_warmup": 0.0003,
+  "wandb_mode": "disabled"
+}
